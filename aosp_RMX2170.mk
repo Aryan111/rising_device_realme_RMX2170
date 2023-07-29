@@ -17,11 +17,11 @@
 # Inherit from RMX2170 device
 $(call inherit-product, device/realme/RMX2170/device.mk)
 
-# Inherit some common Rising OS stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Pixel Extended stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier
-PRODUCT_NAME := lineage_RMX2170
+PRODUCT_NAME := aosp_RMX2170
 PRODUCT_DEVICE := RMX2170
 PRODUCT_BRAND := Realme
 PRODUCT_MODEL := Realme 7 Pro
@@ -30,10 +30,12 @@ PRODUCT_MANUFACTURER := Realme
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Rising OS Build Flags
-WITH_GMS := true
-TARGET_BUILD_APERTURE_CAMERA := true
-TARGET_USE_GOOGLE_TELEPHONY := true
+# Pixel Extended Build Flags
+PEX_BUILD_TYPE := UNOFFICIAL
+PEX_MAINTAINER := Balay Bera
+WITH_GAPPS := true
+TARGET_CORE_GMS := true
+TARGET_EXCLUDES_APERTURE := false
 TARGET_ENABLE_BLUR := true
 TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
@@ -50,4 +52,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="RMX2170" \
     PRIVATE_BUILD_DESC="cheetah-user 13 TQ3A.230705.001 10216780 release-keys"
     
-PRODUCT_GMS_CLIENTID_BASE := android-realme  
+PRODUCT_GMS_CLIENTID_BASE := android-realme 
